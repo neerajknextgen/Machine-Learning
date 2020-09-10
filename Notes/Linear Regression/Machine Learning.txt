@@ -1,0 +1,141 @@
+Machine learning algo:
+1. Regression
+2. Classification
+3. Clustering
+
+Regression:
+Output variable to be predicted is a continuous/numeric variable
+
+Classification:
+Finding out whether email is spam or ham
+
+Clustering:
+Creating a clusters
+
+Machine learning models can be classified into the following three types based on the task performed and the nature of the output:
+
+Regression: The output variable to be predicted is a continuous variable, e.g., the score of a student on a subject.
+Classification: The output variable to be predicted is a categorical variable, e.g., classifying incoming emails as spam or ham.
+Clustering: No predefined notion of a label is allocated to the groups/clusters formed, e.g., customer segmentation.
+
+Supervised learning method:
+Regression
+Classification
+
+Un-Supervised learning method:
+Clustering
+
+Independent variables - on x-axis - also known as predictor variables
+Depenedent variables - on y-axis - also known as output variables
+
+Linear Regression:
+Simple Linear Regression
+Multiple Linear Regression
+
+Simple Linear Regression:
+Single indpendent variable
+Predicated value or best fit line :- y = B0 + B1x
+
+B1 = slope
+B0 = intercept
+
+Residuals:
+ei = Yi - Yprep
+
+RSS (Residual sum of squares)
+e1^2 + e2^2 + e3^2 + _ _ _ _ _ + en^2
+
+RSS or Ordinary least square method = (Y1-B0-B1X1)^2 + (Y2-B0-B1X2)^2 _ _ _ _ _ + (Yn-B0-B1Xn)^2
+
+RSS = sum of i=0 to i=n (Yi-B0-B1Xi)^2	
+
+The main criterion used to determine the best-fitting regression line - 
+	is given by the ordinary least squares (OLS) method, which states that the sum of squares of residuals should be minimum. 
+
+https://towardsdatascience.com/introduction-to-machine-learning-algorithms-linear-regression-14c4e325882a
+
+
+TSS :
+
+TSS = (Y_1 - Y_bar)^2 + _ _ _ _ _ + (Y_n - Y_bar)^2 - This is also called sum of squaxres
+TSS = sum of i=0 to i=n (Y_i - Y_bar)^2
+
+Y_bar = average value of Y.
+
+R_square(R2) = 1 - RSS/TSS
+
+**R2 is used to calculate the strength of linear regression model
+**Higher the R2 better the model accuracy. Maximum R2 value is 1
+When R2 is 1 all the points lie on the best fit line.
+
+Residual Squared error:
+RSE = square_root of RSS/n-2
+
+D.O.F = n - 2
+n = no of data points
+
+
+t-score:
+
+t-score = beta_1/SE(beta_1)
+
+
+Performing linear regression:
+y = c + m_1*x_1 + m_2*x_2 + m_3*x_3 + ....... + m_n*x_n
+
+m_1 = coefficient for first feature (say newspaper on sales problem)
+m_2 = coefficient for second feature (say TV on sales problem)
+
+m is also known as model coefficients or model parameters
+
+
+
+MLR (Multiple Linear Regression):
+
+- Multiple independent variables
+- 1 Response variable
+
+Multicollinearity:
+- Correlation among independent variables are high. It would become difficult to fit the model and interpret the results.
+- Different predictors are exactly the same.
+- Inference changes totally. Coffeicients swing wildly, sign can invert
+- p values therefore not reliable
+- prediction, precision of the predictions
+- goodness of the fit statistics
+
+Detecting multicollinearity:
+
+1. using correlation
+2. using variance inflation factor:
+	VIF_i = 1/ (1 - R_i^2)
+	
+	if VIF > 5 or 10 , there is a multicollinearity
+
+Methods to deal with multicollinearity:
+1. Drop the variable
+2. Create a new variable using correlated variables
+3. PCA
+
+
+Adjusted R^2:
+
+adjusted R^2 = (1 - R^2)(N - 1)/N - p - 1
+AIC = n*log(RSS/n)+ 2p
+
+Feature selection:
+
+By manual way:
+1. Build the model with all features.
+2. Drop features that are least helpful in prediction. (high p-value)
+3. Drop features that are reduandant (using correlation and VIF)
+4. Rebuild model and repeat.
+
+Balanced approach:
+Use automated way to select few set of feature out of all the features. Then perform manual way on rest of features considering you expertise and business domain knowledge.
+
+
+
+Scaling - 
+Standardized/ Min- Max scaling
+
+Reason for scaling - to bring all variables on same scale so that gradient descent algo can work faster and importance will not be given to any variable with higher magnitude.
